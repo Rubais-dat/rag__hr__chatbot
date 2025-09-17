@@ -2,16 +2,18 @@ FROM python:3.11-slim
 
 WORKDIR /app
 
-# Copy only necessary files
+# Copy code and data
+COPY src/ ./src
 COPY requirements.txt .
+
+# Install dependencies
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
-
-# Set environment variables
+# Environment variables
 ENV FLASK_APP=src/app.py
 ENV FLASK_RUN_HOST=0.0.0.0
-ENV GROQ_API_KEY=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
+ENV GROQ_API_KEY=<YOUR_GROQ_API_KEY>
 
 EXPOSE 5000
 
