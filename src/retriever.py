@@ -4,7 +4,7 @@ import faiss
 import numpy as np
 
 class Retriever:
-    def __init__(self, embeddings_file= r"C:\Users\rubai_s8od3y5\rag__hr__chatbot\data\HR_policy_embeddings_local.csv"):
+    def __init__(self, embeddings_file= "data\HR_policy_embeddings_local.csv"):
         self.embeddings_file = embeddings_file
         self.chunks = []
         self.vectors = []
