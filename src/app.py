@@ -7,9 +7,6 @@ from flask import Flask, request, jsonify
 from embedding import embed_text  
 from rag_pipeline import RAGPipeline
 from groq import Groq
-from dotenv import load_dotenv
-
-load_dotenv()
 # Initialize Flask App
 app = Flask(__name__)
 
