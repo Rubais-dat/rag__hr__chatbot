@@ -28,7 +28,7 @@ if prompt := st.chat_input("Write Your query here.."):
     with st.spinner("Thinking..."):
         try:
             # Send POST request to your backend API
-            api_url = "https://raghrchatbot-9eaphc2myrousat9abxvff.streamlit.app/query"
+            api_url = "https://raghrchatbot-production.up.railway.app/query"
             payload = {"question": prompt}
             response = requests.post(api_url, json=payload)
             response.raise_for_status()  # Raise an exception for bad status codes
