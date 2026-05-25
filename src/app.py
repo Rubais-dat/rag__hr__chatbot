@@ -19,7 +19,7 @@ client = Groq(api_key=GROQ_API_KEY)
 
 # Initialize RAG Pipeline components
 rag_pipeline = RAGPipeline()
-EMBEDDINGS_FILE = "data\HR_policy_embeddings_local.csv"
+EMBEDDINGS_FILE = "data/HR_policy_embeddings_local.csv"
 
 # Load embeddings and build FAISS index
 df = pd.read_csv(EMBEDDINGS_FILE)
