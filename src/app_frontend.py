@@ -36,14 +36,7 @@ if prompt := st.chat_input("Write Your query here.."):
             # Parse the JSON response
             data = response.json()
             answer = data.get("answer", "No answer found.")
-            sources = data.get("sources", [])
-
-            # Format the response with the answer and sources
             full_response = answer
-            if sources:
-                full_response += "\n\n**Sources:**"
-                for i, source in enumerate(sources):
-                    full_response += f"\n- Chunk {i+1}: {source['text']}"
 
         except requests.exceptions.ConnectionError:
             full_response = "Connection Error: The backend API is not running. Please make sure your `app.py` server is active in a separate terminal."

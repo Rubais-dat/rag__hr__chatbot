@@ -7,7 +7,9 @@ from flask import Flask, request, jsonify
 from embedding import embed_text  
 from rag_pipeline import RAGPipeline
 from groq import Groq
+from dotenv import load_dotenv
 
+load_dotenv()
 # Initialize Flask App
 app = Flask(__name__)
 
@@ -20,7 +22,7 @@ client = Groq(api_key=GROQ_API_KEY)
 
 # Initialize RAG Pipeline components
 rag_pipeline = RAGPipeline()
-EMBEDDINGS_FILE = "data/HR_policy_embeddings_local.csv"
+EMBEDDINGS_FILE = r"C:\Users\rubai_s8od3y5\rag__hr__chatbot\data\HR_policy_embeddings_local.csv"
 
 # Load embeddings and build FAISS index
 df = pd.read_csv(EMBEDDINGS_FILE)
@@ -76,4 +78,5 @@ def query_api():
 
 # Run the API server
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=5000)
+
